@@ -44,7 +44,6 @@ public class Verbo {
 		rad = sc.nextLine();
 
 		System.out.println("Digite o sufixo");
-		Scanner sc2 = new Scanner(System.in);
 		suf = sc.nextLine();
 		
 		Verbo verbo = new Verbo("Cant", "ar");

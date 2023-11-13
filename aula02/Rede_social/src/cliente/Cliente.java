@@ -42,10 +42,17 @@ public class Cliente {
 		for (String post : postagens) {
 			System.out.println(post);
 		}
+		
+//		for (int i = 0; i < this.postagens.size(); i++) {
+//			System.out.println(this.postagens.get(i));
+//		}
 	}
 	
 	public void alteraPontuacao(int delta) {
 		pontuacao+=delta;
+		if (pontuacao < 0) {
+			pontuacao = 0;
+		}
 	}
 	
 	public Cliente(String nome, String email, String nacionalidade) {
@@ -62,37 +69,61 @@ public class Cliente {
 		String nome, email, nacionalidade, postagem;
 		Cliente cliente;
 		
-		System.out.println("Informe seu nome: ");
-		Scanner sc = new Scanner(System.in);
-		nome = sc.nextLine();
+//		System.out.println("Informe seu nome: ");
+//		Scanner sc = new Scanner(System.in);
+//		nome = sc.nextLine();
+//		
+//		System.out.println("Informe seu email: ");
+//		email = sc.nextLine();
+//		
+//		System.out.println("Informe sua nacionalidade: ");
+//		nacionalidade = sc.nextLine();
+//		
+//		System.out.println("Escreva uma postagem: ");
+//		postagem = sc.nextLine();
+//		
+//		cliente = new Cliente(nome, email, nacionalidade);
+//		
+//		cliente.adicionaPostagens(postagem);
+//		
+//		System.out.println("Escreva mais uma postagem: ");
+//		postagem = sc.nextLine();
+//		
+//		cliente.adicionaPostagens(postagem);
+//		
+//		System.out.println("Escreva mais uma postagem: ");
+//		postagem = sc.nextLine();
+//		
+//		cliente.adicionaPostagens(postagem);
+//		
+//		cliente.listaPostagens();
 		
-		System.out.println("Informe seu email: ");
-		email = sc.nextLine();
-		
-		System.out.println("Informe sua nacionalidade: ");
-		nacionalidade = sc.nextLine();
-		
-		System.out.println("Escreva uma postagem: ");
-		postagem = sc.nextLine();
-		
-		cliente = new Cliente(nome, email, nacionalidade);
-		
-		cliente.adicionaPostagens(postagem);
-		
-		System.out.println("Escreva mais uma postagem: ");
-		postagem = sc.nextLine();
-		
-		cliente.adicionaPostagens(postagem);
-		
-		System.out.println("Escreva mais uma postagem: ");
-		postagem = sc.nextLine();
-		
-		cliente.adicionaPostagens(postagem);
-		
+		String sn;
+		ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+		do {
+			
+			System.out.println("Informe seu nome: ");
+			Scanner sc = new Scanner(System.in);
+			nome = sc.nextLine();
+			
+			System.out.println("Informe seu email: ");
+			email = sc.nextLine();
+			
+			System.out.println("Informe sua nacionalidade: ");
+			nacionalidade = sc.nextLine();
+			
+			System.out.println("Escreva uma postagem: ");
+			postagem = sc.nextLine();
+			
+			cliente = new Cliente(nome, email, nacionalidade);
+			
+			cliente.adicionaPostagens(postagem);
+			
+			System.out.println("Deseja inserir mais Clientes ?(s/n): ");
+			sn = sc.nextLine();
+		} while (!sn.equals("n"));
+	
 		cliente.listaPostagens();
 	}
-	
-	
-	
-	
+		
 }
